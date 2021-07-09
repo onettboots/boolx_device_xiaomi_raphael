@@ -169,6 +169,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# Google Photos
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/pixel/pixel_2016_exclusive.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_2016_exclusive.xml
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true \
