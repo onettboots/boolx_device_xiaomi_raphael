@@ -122,11 +122,7 @@ public class ThermalService extends Service {
 
                 String foregroundApp = info.topActivity.getPackageName();
                 if (!foregroundApp.equals(mPreviousApp)) {
-                    if (!isConfigured(foregroundApp) && isListedOnGameSpace(foregroundApp)) {
-                        mThermalUtils.setThermalProfileForce(ThermalUtils.STATE_GAMING);
-                    } else {
-                        mThermalUtils.setThermalProfile(foregroundApp);
-                    }
+                    mThermalUtils.setThermalProfile(foregroundApp);
                     mPreviousApp = foregroundApp;
                 }
             } catch (Exception e) {}
