@@ -16,3 +16,6 @@ persist.radio.meid             u:object_r:deviceid_prop:s0
 ro.ril.miui.imei               u:object_r:deviceid_prop:s0
 ro.ril.oem.imei                u:object_r:deviceid_prop:s0
 ro.ril.oem.meid                u:object_r:deviceid_prop:s0
+
+# SettingsLib
+settingsdebug.instant.packages u:object_r:settingslib_prop:s0
