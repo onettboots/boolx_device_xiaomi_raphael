@@ -56,6 +56,8 @@ on init
     write /sys/block/sde/queue/iosched/slice_idle 0
     write /sys/block/sde/queue/read_ahead_kb 2048
     write /sys/block/sde/queue/nr_requests 256
+    write /dev/sys/fs/by-name/userdata/data_io_flag 56
+    write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
     # Freezer setup
     write /dev/freezer/frozen/freezer.killable 1
@@ -154,6 +156,8 @@ on property:sys.boot_completed=1
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sde/queue/nr_requests 128
     write /sys/block/sde/queue/iostats 1
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
 
     # First initialize silver only cpus
     write /dev/cpuset/audio-app/cpus 0-3
