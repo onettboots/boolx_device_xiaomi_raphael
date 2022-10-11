@@ -217,6 +217,9 @@ USE_SENSOR_MULTI_HAL := true
 include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 include device/xiaomi/raphael/sepolicy/sepolicy.mk
 
+# HWUI
+HWUI_COMPILE_FOR_PERF := true
+
 # Vendor init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_raphael
 TARGET_RECOVERY_DEVICE_MODULES := libinit_raphael
