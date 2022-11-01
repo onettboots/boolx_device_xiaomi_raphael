@@ -203,7 +203,3 @@ wifi.aware.interface=wifi-aware0
 
 # Zygote
 zygote.critical_window.minute=10
-
-# Telephony
-# Disable handling audio direction changes on IMS calls.
-ro.telephony.handle_audio_direction_changes_between_call_state_changes=false
