@@ -1,0 +1,229 @@
+#!/system/bin/sh
+# more config follow kprofiles settings
+# Bool-X kernel made by OnettBoots
+
+
+function performance {
+        #uclamptuning
+        #top-app
+        echo "max" > /dev/cpuset/top-app/uclamp.max
+        echo "10.00" > /dev/cpuset/top-app/uclamp.min
+        echo "1" > /dev/cpuset/top-app/uclamp.boosted
+        echo "1" > /dev/cpuset/top-app/uclamp.latency_sensitive
+
+        #foreground
+        echo "80.00" > /dev/cpuset/foreground/uclamp.max
+        echo "10.00" > /dev/cpuset/foreground/uclamp.min
+        echo "0" > /dev/cpuset/foreground/uclamp.boosted
+        echo "0" > /dev/cpuset/foreground/uclamp.latency_sensitive
+
+        #background
+        echo "50.00" > /dev/cpuset/background/uclamp.max
+        echo "0" > /dev/cpuset/background/uclamp.min
+        echo "0" > /dev/cpuset/background/uclamp.boosted
+        echo "0" > /dev/cpuset/background/uclamp.latency_sensitive
+
+        #system-background
+        echo "60.00" > /dev/cpuset/system-background/uclamp.max
+        echo "0" > /dev/cpuset/system-background/uclamp.min
+        echo "0" > /dev/cpuset/system-background/uclamp.boosted
+        echo "0" > /dev/cpuset/system-background/uclamp.latency_sensitive
+        #devfreq_cpu_input_boost
+        echo "1382400" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
+        echo "1708800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_big
+        echo "2227200" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
+        echo "1785600" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
+        echo "2419200" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
+		echo "2956800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+		#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
+		#echo "58" > /sys/module/cpu_input_boost/parameters/input_boost_duration
+		
+		#gpu
+		echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	    echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	    echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	    echo "6" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+		echo "810000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+        echo "810" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
+        #touch
+        echo "1 0 0 0" > /sys/devices/platform/goodix_ts.0/game_mode
+		
+}
+
+function ballance {
+        #uclamptuning
+        #top-app
+        echo "90.00" > /dev/cpuset/top-app/uclamp.max
+        echo "10.00" > /dev/cpuset/top-app/uclamp.min
+        echo "1" > /dev/cpuset/top-app/uclamp.boosted
+        echo "1" > /dev/cpuset/top-app/uclamp.latency_sensitive
+
+        #foreground
+        echo "70.00" > /dev/cpuset/foreground/uclamp.max
+        echo "10.00" > /dev/cpuset/foreground/uclamp.min
+        echo "0" > /dev/cpuset/foreground/uclamp.boosted
+        echo "0" > /dev/cpuset/foreground/uclamp.latency_sensitive
+
+        #background
+        echo "40.00" > /dev/cpuset/background/uclamp.max
+        echo "0" > /dev/cpuset/background/uclamp.min
+        echo "0" > /dev/cpuset/background/uclamp.boosted
+        echo "0" > /dev/cpuset/background/uclamp.latency_sensitive
+
+        #system-background
+        echo "50.00" > /dev/cpuset/system-background/uclamp.max
+        echo "0" > /dev/cpuset/system-background/uclamp.min
+        echo "0" > /dev/cpuset/system-background/uclamp.boosted
+        echo "0" > /dev/cpuset/system-background/uclamp.latency_sensitive
+        #defvreq_input_boost
+		echo "1036800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
+        echo "1056000" > /sys/module/cpu_input_boost/parameters/input_boost_freq_big
+        echo "1401600" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
+        echo "1478400" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
+        echo "1804800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
+		echo "1920000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+		#echo "1000" > /sys/module/devfreq_boost/parameters/input_boost_duration
+		#echo "1000" > /sys/module/cpu_input_boost/parameters/input_boost_duration
+		#gpu
+		echo "675000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+        echo "675" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
+	    echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	    echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	    #echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
+	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+        echo "0 0 0 1" > /sys/devices/platform/goodix_ts.0/game_mode
+}
+
+function battery {
+        #uclamptuning
+        #top-app
+        echo "60.00" > /dev/cpuset/top-app/uclamp.max
+        echo "10.00" > /dev/cpuset/top-app/uclamp.min
+        echo "0" > /dev/cpuset/top-app/uclamp.boosted
+        echo "1" > /dev/cpuset/top-app/uclamp.latency_sensitive
+
+        #foreground
+        echo "50.00" > /dev/cpuset/foreground/uclamp.max
+        echo "10.00" > /dev/cpuset/foreground/uclamp.min
+        echo "0" > /dev/cpuset/foreground/uclamp.boosted
+        echo "0" > /dev/cpuset/foreground/uclamp.latency_sensitive
+
+        #background
+        echo "30.00" > /dev/cpuset/background/uclamp.max
+        echo "0" > /dev/cpuset/background/uclamp.min
+        echo "0" > /dev/cpuset/background/uclamp.boosted
+        echo "0" > /dev/cpuset/background/uclamp.latency_sensitive
+
+        #system-background
+        echo "40.00" > /dev/cpuset/system-background/uclamp.max
+        echo "0" > /dev/cpuset/system-background/uclamp.min
+        echo "0" > /dev/cpuset/system-background/uclamp.boosted
+        echo "0" > /dev/cpuset/system-background/uclamp.latency_sensitive
+        #defvreq_input_boost
+        #skipped boosting from kernel
+		#echo "2000" > /sys/module/devfreq_boost/parameters/input_boost_duration
+		#echo "2000" > /sys/module/cpu_input_boost/parameters/input_boost_duration
+		echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	    echo "4" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	    #echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
+	    echo "8" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	    echo "8" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+		echo "499000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+        echo "499" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
+        echo "0 0 0 1" > /sys/devices/platform/goodix_ts.0/game_mode
+}
+
+function none {
+        #uclamptuning
+        #top-app
+        echo "max" > /dev/cpuset/top-app/uclamp.max
+        echo "10.00" > /dev/cpuset/top-app/uclamp.min
+        echo "1" > /dev/cpuset/top-app/uclamp.boosted
+        echo "1" > /dev/cpuset/top-app/uclamp.latency_sensitive
+
+        #foreground
+        echo "80.00" > /dev/cpuset/foreground/uclamp.max
+        echo "10.00" > /dev/cpuset/foreground/uclamp.min
+        echo "0" > /dev/cpuset/foreground/uclamp.boosted
+        echo "0" > /dev/cpuset/foreground/uclamp.latency_sensitive
+
+        #background
+        echo "50.00" > /dev/cpuset/background/uclamp.max
+        echo "0" > /dev/cpuset/background/uclamp.min
+        echo "0" > /dev/cpuset/background/uclamp.boosted
+        echo "0" > /dev/cpuset/background/uclamp.latency_sensitive
+
+        #system-background
+        echo "60.00" > /dev/cpuset/system-background/uclamp.max
+        echo "0" > /dev/cpuset/system-background/uclamp.min
+        echo "0" > /dev/cpuset/system-background/uclamp.boosted
+        echo "0" > /dev/cpuset/system-background/uclamp.latency_sensitive
+        #defvreq_input_boost
+		echo "1036800" > /sys/module/cpu_input_boost/parameters/input_boost_freq_little
+        echo "1056000" > /sys/module/cpu_input_boost/parameters/input_boost_freq_big
+        echo "1401600" > /sys/module/cpu_input_boost/parameters/input_boost_freq_prime
+        echo "1708800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_little
+        echo "1804800" > /sys/module/cpu_input_boost/parameters/max_boost_freq_big
+		echo "1920000" > /sys/module/cpu_input_boost/parameters/max_boost_freq_prime
+		#echo "58" > /sys/module/devfreq_boost/parameters/input_boost_duration
+		#echo "58" > /sys/module/cpu_input_boost/parameters/input_boost_duration
+		#gpu
+		echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
+	    echo "0" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
+	    echo "8" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	    echo "8" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+		echo "810000000" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/devfreq/2c00000.qcom,kgsl-3d0/max_freq
+        echo "810" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_clock_mhz
+        echo "1 0 0 0" > /sys/devices/platform/goodix_ts.0/game_mode
+}
+
+function gms {
+        #restrict_gms
+        pm disable com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService
+        pm disable com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService
+}
+
+kp=/sys/module/kprofiles/parameters/kp_mode
+
+#if grep "2" $kp; then
+#   ballance
+#fi
+#if grep "3" $kp; then
+#   performance
+#fi
+#if grep "1" $kp; then
+#   battery
+#fi
+#if grep "0" $kp; then
+#   none
+#fi
+function kprofiles {
+    for ballanced in $(grep "2" $kp)
+    do
+        ballance
+        gms
+    done
+    for perf in $(grep "3" $kp)
+    do
+        performance
+        gms
+    done
+    for batt in $(grep "1" $kp)
+    do
+        battery
+        gms
+    done
+    for non in $(grep "0" $kp)
+    do
+        none
+        gms
+    done
+}
+
+#looping
+while true
+do
+   kprofiles
+   sleep 5
+done
