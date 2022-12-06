@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,8 @@ package org.lineageos.settings.thermal;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-import org.lineageos.settings.utils.FileUtils;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.R;
 
 public class ThermalActivity extends PreferenceActivity {
 
