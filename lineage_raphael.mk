@@ -15,20 +15,22 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common DerpFest stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+# Inherit some common PalyrimOS stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # UDFPS animations
 EXTRA_UDFPS_ANIMATIONS := true
 
-# Derp
-DERP_BUILDTYPE := Official
+# Palirim
+WITH_GMS := true
+PALYRIM_BUILD_TYPE := OFFICIAL
+PALYRIM_MAINTAINER := OnettBoots
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 2160
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := derp_raphael
+PRODUCT_NAME := lineage_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9T Pro
