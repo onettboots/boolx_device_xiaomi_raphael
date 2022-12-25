@@ -20,6 +20,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # UDFPS animations
 EXTRA_UDFPS_ANIMATIONS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Palirim
 WITH_GMS := true
