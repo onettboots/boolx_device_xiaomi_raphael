@@ -90,8 +90,8 @@ function ballance {
 	    echo "1" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/throttling
 	    echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_pwrlevel
 	    #echo "2" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/thermal_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
-	    echo "7" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
+	    echo "8" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/min_pwrlevel
+	    echo "8" > /sys/devices/platform/soc/2c00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/default_pwrlevel
         echo "0 0 0 1" > /sys/devices/platform/goodix_ts.0/game_mode
 }
 
