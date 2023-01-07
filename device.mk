@@ -59,9 +59,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KProfiles
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bin/boolx_kprofiles:$(TARGET_COPY_OUT_SYSTEM)/bin/boolx_kprofiles
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
