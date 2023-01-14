@@ -36,6 +36,9 @@ $(call inherit-product, vendor/xiaomi/raphael/raphael-vendor.mk)
 # Gcam
 $(call inherit-product-if-exists, vendor/GcamBSG/GcamBSG-vendor.mk)
 
+# MiuiCamera
+$(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
