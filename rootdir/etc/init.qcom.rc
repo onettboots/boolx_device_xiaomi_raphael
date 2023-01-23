@@ -256,7 +256,14 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-service iop /vendor/bin/iop
+
+service nqnfcinfo /system/vendor/bin/nqnfcinfo
+    class late_start
+    group nfc
+    user system
+    oneshot
+
+service iop /system/vendor/bin/iop
     class main
     user root
     group root

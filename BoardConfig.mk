@@ -112,8 +112,11 @@ DEVICE_MATRIX_FILE := \
 ODM_MANIFEST_FILES += \
     $(DEVICE_PATH)/vintf/manifest-qva.xml
 
-ODM_MANIFEST_SKUS += raphael
-ODM_MANIFEST_RAPHAEL_FILES := $(DEVICE_PATH)/vintf/manifest_nfc.xml
+ODM_MANIFEST_SKUS += nfc nfc_ese
+ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/vintf/manifest_nfc.xml
+ODM_MANIFEST_NFC_ESE_FILES := \
+    $(DEVICE_PATH)/vintf/manifest_nfc.xml \
+    $(DEVICE_PATH)/vintf/manifest_ese.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xa90000
@@ -220,8 +223,8 @@ include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 include device/xiaomi/raphael/sepolicy/sepolicy.mk
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_raphael
-TARGET_RECOVERY_DEVICE_MODULES := libinit_raphael
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_raphael
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_raphael
 
 # USB
 TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY := true
