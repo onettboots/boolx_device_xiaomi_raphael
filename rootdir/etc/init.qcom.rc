@@ -87,6 +87,9 @@ on boot
     chown system system /sys/class/power_supply/battery/input_suspend
     chmod 0666 /sys/class/power_supply/battery/input_suspend
 
+    chown system system /sys/devices/platform/goodix_ts.0/udfps_pressed
+    chmod 0660 /sys/devices/platform/goodix_ts.0/udfps_pressed
+
     # This location is used by QCRIL to host UNIX domain
     # socket files used for internal IPC within QCRIL
     # modules
