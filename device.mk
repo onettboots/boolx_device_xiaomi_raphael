@@ -449,6 +449,7 @@ PRODUCT_PACKAGES += \
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+    RemovePackagesRaphael
 
 # Sensors
 PRODUCT_PACKAGES += \
