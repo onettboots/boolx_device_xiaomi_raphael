@@ -15,18 +15,18 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common PalyrimOS stuff
+# Inherit some common AlphaDroid stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # UDFPS animations
-EXTRA_UDFPS_ANIMATIONS := true
+TARGET_HAS_UDFPS := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
 
 # Palirim
-WITH_GMS := true
-PALYRIM_BUILD_TYPE := OFFICIAL
-PALYRIM_MAINTAINER := OnettBoots
+WITH_GAPPS := true
+ALPHA_BUILD_TYPE := UNOFFICIAL
+ALPHA_MAINTAINER := OnettBoots
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 2160
