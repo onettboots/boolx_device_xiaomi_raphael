@@ -14,7 +14,8 @@ LOCAL_OVERRIDES_PACKAGES := \
     AmbientSensePrebuilt \
     YouTube \
     Eleven \
-    AudioFX
+    AudioFX \
+    Aperture
 
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
